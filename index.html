@@ -42,18 +42,45 @@
             <option>Item #4</option>
         </select>
     </form>
-    <h3>Below are Some Test Links...</h3>
-    <a href="./big-dummy-file.txt" target="_blank">Download Big Dummy .txt File</a>
-    <br><br>
-    <a href="./mymovie.mov">Download Big Dummy .mov File</a>
-    <br><br>
-    <a href="https://www.datadoghq.com/" target="_blank">Open DatadogHQ Site on New Tab</a>
+    <form action="/action_page.php">
+        <p>Please select your favorite Web language:</p>
+        <input type="radio" id="html" name="fav_language" value="HTML">
+        <label for="html">HTML</label><br>
+        <input type="radio" id="css" name="fav_language" value="CSS">
+        <label for="css">CSS</label><br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+        <label for="javascript">JavaScript</label>
+    </form>
     <br>
     <a href="" target="popup" onclick="window.open('https://www.datadoghq.com/', 'name', 'width=600,height=400')">Open DatadogHQ Site in a Popup Window</a>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"
         integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="./javascript/prompts.js"></script>
+    <script>
+        (function(h,o,u,n,d) {
+          h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+          d=o.createElement(u);d.async=1;d.src=n
+          n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+        })(window,document,'script','https://www.datadoghq-browser-agent.com/datadog-rum-v4.js','DD_RUM')
+        DD_RUM.onReady(function() {
+          DD_RUM.init({
+            clientToken: 'pub03471212b3ddd29cd6d829c051a93dd1',
+            applicationId: 'c140084f-cae6-44a0-9845-f40e75d61efa',
+            site: 'datadoghq.com',
+            service: 'javascript-popups',
+            
+            // Specify a version number to identify the deployed version of your application in Datadog 
+            // version: '1.0.0',
+            sampleRate: 100,
+            premiumSampleRate: 100,
+            trackInteractions: true,
+            defaultPrivacyLevel: 'mask-user-input',
+          });
+      
+          DD_RUM.startSessionReplayRecording();
+        })
+      </script>
 </body>
 
 </html>
