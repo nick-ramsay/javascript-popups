@@ -44,8 +44,13 @@ const updateName = () => {
     }
 }
 
+const fetchCookies = () => {
+    console.log("Cookies => " + document.cookies);
+    document.getElementById("test-cookie").innerText = document.cookies;
+};
+
 document.getElementById("delete-name-btn").addEventListener("click", deleteName);
 document.getElementById("update-name-btn").addEventListener("click", updateName);
 document.getElementById("enter-name-btn").addEventListener("click", initialNameCheck);
 
-window.onload = (event) => { initialNameCheck(); };
+window.onload = (event) => { initialNameCheck(); fetchCookies(); };
