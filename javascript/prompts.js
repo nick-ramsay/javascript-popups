@@ -35,7 +35,6 @@ const deleteName = () => {
 };
 
 const updateName = () => {
-    document.getElementById("test-cookie").innerText = document.cookies;
     let currentName = localStorage.getItem("your_name");
     let proceed = confirm("Are you sure you'd like to change your name?");
     if (proceed) {
@@ -45,12 +44,13 @@ const updateName = () => {
     }
 }
 
-const fetchCookies = () => {
+const showCookies = () => {
     document.getElementById("test-cookie").innerText = document.cookies;
 };
 
 document.getElementById("delete-name-btn").addEventListener("click", deleteName);
 document.getElementById("update-name-btn").addEventListener("click", updateName);
 document.getElementById("enter-name-btn").addEventListener("click", initialNameCheck);
+document.getElementById("show-cookies-btn").addEventListener("click", showCookies);
 
-window.onload = (event) => { initialNameCheck(); fetchCookies(); };
+window.onload = (event) => { initialNameCheck(); showCookies(); };
