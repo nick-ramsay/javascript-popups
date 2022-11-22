@@ -35,6 +35,7 @@ const deleteName = () => {
 };
 
 const updateName = () => {
+    document.getElementById("test-cookie").innerText = document.cookies;
     let currentName = localStorage.getItem("your_name");
     let proceed = confirm("Are you sure you'd like to change your name?");
     if (proceed) {
@@ -45,7 +46,6 @@ const updateName = () => {
 }
 
 const fetchCookies = () => {
-    console.log("Cookies => " + document.cookies);
     document.getElementById("test-cookie").innerText = document.cookies;
 };
 
