@@ -48,9 +48,20 @@ const showCookies = () => {
     document.getElementById("test-cookie").innerText = document.cookies;
 };
 
+const testElementContent = () => {
+    let targetElementString = document.querySelector("body > table > tbody > tr > td").innerHTML;
+    let gbStartsAt = targetElementString.indexOf("&nbsp;GB");
+    let gbValue = Number(targetElementString.slice(0,gbStartsAt));
+
+    console.log(gbValue);
+    //return (gbValue < 259.6 ? true:false);
+
+}
+
 document.getElementById("delete-name-btn").addEventListener("click", deleteName);
 document.getElementById("update-name-btn").addEventListener("click", updateName);
 document.getElementById("enter-name-btn").addEventListener("click", initialNameCheck);
 document.getElementById("show-cookies-btn").addEventListener("click", showCookies);
+document.getElementById("testElementContentBtn").addEventListener("click", testElementContent);
 
 window.onload = (event) => { initialNameCheck(); showCookies(); };
