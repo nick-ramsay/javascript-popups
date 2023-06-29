@@ -49,12 +49,12 @@ const showCookies = () => {
 };
 
 const testElementContent = () => {
-    let targetElementString = document.querySelector("body > table > tbody > tr > td").innerHTML;
+    //let targetElementString = document.querySelector("body > table > tbody > tr > td").innerHTML;
+    let targetElementString = element.innerHTML;
     let gbStartsAt = targetElementString.indexOf("&nbsp;GB");
     let gbValue = Number(targetElementString.slice(0,gbStartsAt));
 
-    console.log(gbValue);
-    //return (gbValue < 259.6 ? true:false);
+    return (gbValue < 259.6 ? true:false);
 
 }
 
