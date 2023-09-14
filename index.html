@@ -68,45 +68,55 @@
 -->
     <table>
         <tr>
-             <td class="dataCol">239.0&nbsp;GB&nbsp;(92%)&nbsp;<a>[View]</a></td>
+            <td class="dataCol">239.0&nbsp;GB&nbsp;(92%)&nbsp;<a>[View]</a></td>
         </tr>
     </table>
     <br>
     <br>
     <img src="https://wikipedia.org/static/images/project-logos/enwiki.png" alt="Wiki_Logo" />
+    <br>
+    <br>
+    <div class="file-uploader">
+        <div class="filepond--wrapper __web-inspector-hide-shortcut__">
+            <div class="filepond--root filepond--hopper" data-style-button-remove-item-position="left"></div>
+            <label for="myfile">Select a file:</label>
+            <input type="file" id="myfile" name="myfile">
+        </div>
+    </div>
+
     <!--
     <button id="testElementContentBtn">Test Element Content</button>
     -->
 
-   
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"
         integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="./javascript/prompts.js"></script>
     <script>
-        (function(h,o,u,n,d) {
-          h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
-          d=o.createElement(u);d.async=1;d.src=n
-          n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
-        })(window,document,'script','https://www.datadoghq-browser-agent.com/datadog-rum-v4.js','DD_RUM')
-        DD_RUM.onReady(function() {
-          DD_RUM.init({
-            clientToken: 'pub03471212b3ddd29cd6d829c051a93dd1',
-            applicationId: 'c140084f-cae6-44a0-9845-f40e75d61efa',
-            site: 'datadoghq.com',
-            service: 'javascript-popups',
-            
-            // Specify a version number to identify the deployed version of your application in Datadog 
-            // version: '1.0.0',
-            sampleRate: 100,
-            premiumSampleRate: 100,
-            trackInteractions: true,
-            defaultPrivacyLevel: 'mask-user-input',
-          });
-      
-          DD_RUM.startSessionReplayRecording();
+        (function (h, o, u, n, d) {
+            h = h[d] = h[d] || { q: [], onReady: function (c) { h.q.push(c) } }
+            d = o.createElement(u); d.async = 1; d.src = n
+            n = o.getElementsByTagName(u)[0]; n.parentNode.insertBefore(d, n)
+        })(window, document, 'script', 'https://www.datadoghq-browser-agent.com/datadog-rum-v4.js', 'DD_RUM')
+        DD_RUM.onReady(function () {
+            DD_RUM.init({
+                clientToken: 'pub03471212b3ddd29cd6d829c051a93dd1',
+                applicationId: 'c140084f-cae6-44a0-9845-f40e75d61efa',
+                site: 'datadoghq.com',
+                service: 'javascript-popups',
+
+                // Specify a version number to identify the deployed version of your application in Datadog 
+                // version: '1.0.0',
+                sampleRate: 100,
+                premiumSampleRate: 100,
+                trackInteractions: true,
+                defaultPrivacyLevel: 'mask-user-input',
+            });
+
+            DD_RUM.startSessionReplayRecording();
         })
-      </script>
+    </script>
 </body>
 
 </html>
